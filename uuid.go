@@ -153,9 +153,9 @@ func (u *UUID) SetVariant(v byte) {
 // and panics if the error is non-nil. It is intended for use in variable
 // initializations such as
 //	var packageUUID = uuid.Must(uuid.FromString("123e4567-e89b-12d3-a456-426655440000"));
-func Must(u UUID, err error) UUID {
+func Must(u UUID, err error) (UUID,error) {
 	if err != nil {
 		panic(err)
 	}
-	return u
+	return u,nil
 }
